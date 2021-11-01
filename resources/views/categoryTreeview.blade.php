@@ -15,16 +15,25 @@
 	  			<div class="row">
 	  				<div class="col-md-6">
 	  					<h3>Category List</h3>
+            <div id="app">
 				        <ul id="tree1">
 				            @foreach($categories as $category)
 				                <li>
-				                    {{ $category->title }}
+
+
+
+
+                                        <app :id={{$category->id}}>{{ $category->title }}</app>
+
+
+
 				                    @if(count($category->childs))
 				                        @include('manageChild',['childs' => $category->childs])
 				                    @endif
 				                </li>
 				            @endforeach
 				        </ul>
+            </div>
 	  				</div>
 	  				<div class="col-md-6">
 	  					<h3>Add New Category</h3>
@@ -70,6 +79,7 @@
 	  		</div>
         </div>
     </div>
+    <script src="{{mix('js/app.js')}}"></script>
     <script src="/js/treeview.js"></script>
 </body>
 </html>

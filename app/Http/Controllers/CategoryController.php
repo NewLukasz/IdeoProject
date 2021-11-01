@@ -26,4 +26,19 @@ class CategoryController extends Controller
         Category::create($input);
         return back()->with('success', 'New Category added successfully.');
     }
+
+
+
+    public function destroy(Request $request,$id)
+    {
+        $existingItem = Category::find($id);
+
+        Category::destroyChildren($id);
+
+        if($existingItem){
+            $existingItem->delete();
+            return "Item is deleted.";
+        }
+        return "Item not found";
+    }
 }

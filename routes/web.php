@@ -19,3 +19,8 @@ Route::get('/', function () {
 
 Route::get('category-tree-view',['uses'=>'CategoryController@manageCategory']);
 Route::post('add-category',['as'=>'add.category','uses'=>'CategoryController@addCategory']);
+
+
+Route::prefix('/category-tree-view')->group(function(){
+    Route::delete("/{id}",'CategoryController@destroy');
+});
