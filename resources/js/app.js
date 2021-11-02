@@ -10,6 +10,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faTrash, faPlusSquare)
 
+import VueSimpleAlert from "vue-simple-alert";
+
+Vue.use(VueSimpleAlert);
+
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 const app = new Vue({

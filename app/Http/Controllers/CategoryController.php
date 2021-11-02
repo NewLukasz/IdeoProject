@@ -27,6 +27,15 @@ class CategoryController extends Controller
         return back()->with('success', 'New Category added successfully.');
     }
 
+    public function addNewCategory(Request $request, $idOfParent)
+    {
+        $newCategory = new Category();
+        $newCategory->title=$request->nameOfNewCategory;
+        $newCategory->parent_id=$idOfParent;
+        $newCategory->save();
+        return $newCategory;
+    }
+
 
 
     public function destroy(Request $request,$id)

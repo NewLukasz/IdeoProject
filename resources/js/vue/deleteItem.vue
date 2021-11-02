@@ -1,7 +1,8 @@
 <template>
     <div>
             <slot></slot>
-            <font-awesome-icon @click="deleteMethod()" icon="trash" />
+            <font-awesome-icon @click="confirmationBeforeDelete()" icon="trash" />
+
     </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
         deleteMethod(){
             axios.delete('/category-tree-view/'+this.id)
             location.reload()
+        },
+        confirmationBeforeDelete(){
+            this.$confirm("Are you sure?").then(() => {
+            this.deleteMethod();
+            });
         }
     }
 }

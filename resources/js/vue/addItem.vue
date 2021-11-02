@@ -10,8 +10,13 @@ export default {
     props: ['idOfParent'],
     methods:{
         addMethod(){
-            alert("Hello from add method");
-
+            this.$prompt("Input new category name").then((nameOfNewCategory) => {
+            axios.post('add-new-category/'+this.idOfParent,
+            {
+              nameOfNewCategory:nameOfNewCategory
+            });
+            location.reload()
+        });
         }
     }
 }

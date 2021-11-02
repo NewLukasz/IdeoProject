@@ -1,6 +1,6 @@
 <template>
     <div>
-        <delete-item :id="id" class="float-left"><slot></slot></delete-item><add-item></add-item>
+        <delete-item :id="id" class="float-left"><slot></slot></delete-item><add-item :idOfParent="id"></add-item>
     </div>
 </template>
 
