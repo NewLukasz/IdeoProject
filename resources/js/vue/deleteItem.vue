@@ -1,11 +1,7 @@
 <template>
     <div>
-
-
-            <div @click="deleteAction()">
-                <slot></slot>
-                 DELETE
-            </div>
+            <slot></slot>
+            <font-awesome-icon @click="deleteMethod()" icon="trash" />
     </div>
 </template>
 
@@ -13,7 +9,7 @@
 export default {
     props: ['id'],
     methods:{
-        deleteAction(){
+        deleteMethod(){
             axios.delete('/category-tree-view/'+this.id)
             location.reload()
         }

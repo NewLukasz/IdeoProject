@@ -1,17 +1,26 @@
 <template>
     <div>
-
-        <delete-item :id="id"><slot></slot></delete-item>
+        <delete-item :id="id" class="float-left"><slot></slot></delete-item><add-item></add-item>
     </div>
 </template>
 
 <script>
 import deleteItem from './deleteItem.vue'
+import addItem from './addItem'
 export default {
     props:['id'],
     components:{
-            deleteItem
+            deleteItem,
+            addItem
     }
-
 }
 </script>
+
+<style scoped>
+
+.float-left {
+    float:left;
+    padding-right: 5px;
+}
+
+</style>
