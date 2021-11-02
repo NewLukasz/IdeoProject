@@ -14,10 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('category-tree-view',['uses'=>'CategoryController@manageCategory']);
-Route::post('add-category',['as'=>'add.category','uses'=>'CategoryController@addCategory']);
-
 Route::post('add-new-category/{idOfParent}','CategoryController@addNewCategory');
-
 
 Route::prefix('/category-tree-view')->group(function(){
     Route::delete("/{id}",'CategoryController@destroy');

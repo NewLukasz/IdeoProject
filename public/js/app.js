@@ -12287,11 +12287,6 @@ __webpack_require__.r(__webpack_exports__);
     addNewInternalCategory: _addNewInternalCategory__WEBPACK_IMPORTED_MODULE_1__["default"],
     addNewCategoryOnTheSameLevel: _addNewCategoryOnTheSameLevel__WEBPACK_IMPORTED_MODULE_2__["default"],
     addNewCategoryWhenCategoryListIsEmpty: _addNewCategoryWhenCategoryListIsEmpty__WEBPACK_IMPORTED_MODULE_3__["default"]
-  },
-  methods: {
-    test: function test() {
-      alert(10);
-    }
   }
 });
 
@@ -12325,6 +12320,9 @@ __webpack_require__.r(__webpack_exports__);
       this.$confirm("Are you sure?").then(function () {
         _this.deleteMethod();
       });
+    },
+    test: function test() {
+      alert(10);
     }
   }
 });
@@ -33227,14 +33225,7 @@ var render = function () {
             _vm._v(" "),
             _c("delete-item", { attrs: { id: _vm.id } }),
             _vm._v(" "),
-            _c("add-new-internal-category", {
-              attrs: { idOfParent: _vm.id },
-              on: {
-                click: function ($event) {
-                  return _vm.test()
-                },
-              },
-            }),
+            _c("add-new-internal-category", { attrs: { idOfParent: _vm.id } }),
             _vm._v(" "),
             _c("add-new-category-on-the-same-level", {
               attrs: { idOfParent: _vm.parent_id },
@@ -33275,6 +33266,7 @@ var render = function () {
   return _c("font-awesome-icon", {
     attrs: { icon: "trash" },
     on: {
+      mouseover: _vm.test,
       click: function ($event) {
         return _vm.confirmationBeforeDelete()
       },
