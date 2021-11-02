@@ -19,7 +19,7 @@
 				        <ul id="tree1">
 				            @foreach($categories as $category)
 				                <li>
-                                        <app :id={{$category->id}}>{{ $category->title }}</app>
+                                        <item-management :id={{$category->id}} :parent_id={{$category->parent_id}}>{{ $category->title }}</item-management>
 				                    @if(count($category->childs))
 				                        @include('manageChild',['childs' => $category->childs])
 				                    @endif
