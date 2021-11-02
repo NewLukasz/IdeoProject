@@ -8,5 +8,5 @@
             @endif
         </li>
     @endforeach
-</div>
-    </ul>
+    </div>
+</ul>

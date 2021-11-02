@@ -1,8 +1,5 @@
 <template>
-    <div>
-            <slot></slot>
-            <font-awesome-icon @click="addMethod()" icon="arrow-right" />
-    </div>
+    <font-awesome-icon @click="addMethod()" icon="arrow-right" />
 </template>
 
 <script>

@@ -1,9 +1,5 @@
 <template>
-    <div>
-            <slot></slot>
-            <font-awesome-icon @click="confirmationBeforeDelete()" icon="trash" />
-
-    </div>
+        <font-awesome-icon @click="confirmationBeforeDelete()" icon="trash" />
 </template>
 
 <script>
